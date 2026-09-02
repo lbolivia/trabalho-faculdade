@@ -144,9 +144,9 @@ namespace AlimentacaoSaudavel
             Console.WriteLine("=====================================================\n");
         }
 
-        // ---------------------------------------------------
-        // DICAS DE ALIMENTAÇÃO SAUDÁVEL
-        // ---------------------------------------------------
+        
+        // dicas
+       
         static void MostrarDicas()
         {
             List<string> dicas = new List<string>
