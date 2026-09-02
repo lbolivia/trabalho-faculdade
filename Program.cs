@@ -1,4 +1,4 @@
-﻿using System;
+﻿ystem;
 using System.Collections.Generic;
 
 
@@ -42,9 +42,9 @@ namespace AlimentacaoSaudavel
             }
         }
 
-       
+
         // menu
-        
+
         static void MostrarMenuPrincipal()
         {
             Console.WriteLine("=====================================================");
@@ -58,9 +58,9 @@ namespace AlimentacaoSaudavel
             Console.Write("Escolha uma opção: ");
         }
 
-        
+
         // montagem prato
-        
+
         static void MontarPrato()
         {
             pontosPrato = 0;
@@ -102,7 +102,7 @@ namespace AlimentacaoSaudavel
 
             int escolha = LerOpcaoValida(itens.Length);
 
-           
+
             pontosPrato += pontos[escolha - 1];
 
             Console.WriteLine($"Você escolheu: {itens[escolha - 1]}\n");
@@ -144,7 +144,7 @@ namespace AlimentacaoSaudavel
             Console.WriteLine("=====================================================\n");
         }
 
-        
+       
         // dicas
        
         static void MostrarDicas()
@@ -168,9 +168,9 @@ namespace AlimentacaoSaudavel
             Console.WriteLine();
         }
 
-         
+
         // quiz
-       
+
         static void IniciarQuiz()
         {
             string[] perguntas =
@@ -191,7 +191,7 @@ namespace AlimentacaoSaudavel
                 new string[] { "A cor da embalagem", "O rótulo com ingredientes e nutrientes", "O preço apenas", "A marca apenas" }
             };
 
-            int[] respostasCorretas = { 2, 2, 3, 2, 2 }; 
+            int[] respostasCorretas = { 2, 2, 3, 2, 2 };
 
             int acertos = 0;
 
