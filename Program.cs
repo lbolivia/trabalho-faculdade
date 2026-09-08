@@ -1,12 +1,10 @@
-﻿ystem;
+﻿using System;
 using System.Collections.Generic;
-
 
 namespace AlimentacaoSaudavel
 {
     class Program
     {
-        // pontuaçao
         static int pontosPrato = 0;
 
         static void Main(string[] args)
@@ -25,25 +23,26 @@ namespace AlimentacaoSaudavel
                     case "1":
                         MontarPrato();
                         break;
+
                     case "2":
                         MostrarDicas();
                         break;
+
                     case "3":
                         IniciarQuiz();
                         break;
+
                     case "4":
                         continuar = false;
                         Console.WriteLine("\nObrigado por usar o programa! Cuide bem da sua alimentação. :)");
                         break;
+
                     default:
                         Console.WriteLine("\nOpção inválida! Tente novamente.\n");
                         break;
                 }
             }
         }
-
-
-        // menu
 
         static void MostrarMenuPrincipal()
         {
@@ -58,9 +57,6 @@ namespace AlimentacaoSaudavel
             Console.Write("Escolha uma opção: ");
         }
 
-
-        // montagem prato
-
         static void MontarPrato()
         {
             pontosPrato = 0;
@@ -68,18 +64,45 @@ namespace AlimentacaoSaudavel
             Console.WriteLine("\n--- Vamos montar o seu prato! ---");
             Console.WriteLine("Escolha uma opção em cada categoria.\n");
 
-            // categoria e pontuação
+            string[] proteinas =
+            {
+                "Frango grelhado",
+                "Ovo cozido",
+                "Feijão",
+                "Carne empanada frita",
+                "Salsicha/linguiça"
+            };
 
-            string[] proteinas = { "Frango grelhado", "Ovo cozido", "Feijão", "Carne empanada frita", "Salsicha/linguiça" };
             int[] pontosProteinas = { 2, 2, 2, 0, 0 };
 
-            string[] carboidratos = { "Arroz integral", "Arroz branco", "Batata frita", "Macarrão integral", "Pão branco" };
+            string[] carboidratos =
+            {
+                "Arroz integral",
+                "Arroz branco",
+                "Batata frita",
+                "Macarrão integral",
+                "Pão branco"
+            };
+
             int[] pontosCarboidratos = { 2, 1, 0, 2, 0 };
 
-            string[] vegetais = { "Salada verde (alface, rúcula...)", "Legumes cozidos no vapor", "Nenhum vegetal" };
+            string[] vegetais =
+            {
+                "Salada verde (alface, rúcula...)",
+                "Legumes cozidos no vapor",
+                "Nenhum vegetal"
+            };
+
             int[] pontosVegetais = { 2, 2, 0 };
 
-            string[] bebidas = { "Água", "Suco natural sem açúcar", "Refrigerante", "Suco em pó/artificial" };
+            string[] bebidas =
+            {
+                "Água",
+                "Suco natural sem açúcar",
+                "Refrigerante",
+                "Suco em pó/artificial"
+            };
+
             int[] pontosBebidas = { 2, 2, 0, 0 };
 
             EscolherCategoria("PROTEÍNA", proteinas, pontosProteinas);
@@ -90,7 +113,6 @@ namespace AlimentacaoSaudavel
             MostrarResultadoPrato();
         }
 
-        // mostra os itens, le a escolha e soma
         static void EscolherCategoria(string nomeCategoria, string[] itens, int[] pontos)
         {
             Console.WriteLine($"--- {nomeCategoria} ---");
@@ -102,13 +124,11 @@ namespace AlimentacaoSaudavel
 
             int escolha = LerOpcaoValida(itens.Length);
 
-
             pontosPrato += pontos[escolha - 1];
 
             Console.WriteLine($"Você escolheu: {itens[escolha - 1]}\n");
         }
 
-        // numero valido
         static int LerOpcaoValida(int totalOpcoes)
         {
             int numero;
@@ -123,7 +143,6 @@ namespace AlimentacaoSaudavel
             return numero;
         }
 
-        // resultado final do prato
         static void MostrarResultadoPrato()
         {
             Console.WriteLine("=====================================================");
@@ -141,12 +160,10 @@ namespace AlimentacaoSaudavel
             {
                 Console.WriteLine("Resultado: ATENÇÃO! Tente incluir mais itens naturais e menos processados.");
             }
+
             Console.WriteLine("=====================================================\n");
         }
 
-       
-        // dicas
-       
         static void MostrarDicas()
         {
             List<string> dicas = new List<string>
@@ -161,15 +178,14 @@ namespace AlimentacaoSaudavel
             };
 
             Console.WriteLine("\n--- Dicas de Alimentação Saudável ---");
+
             foreach (string dica in dicas)
             {
                 Console.WriteLine("- " + dica);
             }
+
             Console.WriteLine();
         }
-
-
-        // quiz
 
         static void IniciarQuiz()
         {
@@ -223,7 +239,6 @@ namespace AlimentacaoSaudavel
             MostrarResultadoQuiz(acertos, perguntas.Length);
         }
 
-        // resultado final
         static void MostrarResultadoQuiz(int acertos, int totalPerguntas)
         {
             Console.WriteLine("=====================================================");
@@ -243,6 +258,7 @@ namespace AlimentacaoSaudavel
             {
                 Console.WriteLine("Vale a pena estudar mais sobre alimentação saudável. Volte a este quiz depois!");
             }
+
             Console.WriteLine("=====================================================\n");
         }
     }
